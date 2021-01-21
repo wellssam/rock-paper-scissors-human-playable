@@ -13,13 +13,13 @@ function game(){
 
 // Display message explaining the rules of the game to the user
 function rule(){
-    return "Welcome to Rock Paper Scissors! When prompted type in your move, either 'Rock', 'Paper' or 'Scissors' (not case sensitive). You will be playing against the computer, which will select its moves randomly. The first to win three rounds shall be declared the victor!"
+    return "Welcome to Rock Paper Scissors! When prompted type in your move, either 'Rock', 'Paper' or 'Scissors' (not case sensitive). You will be playing against the computer, which will select its moves randomly. The first to win three rounds shall be declared the victor! Click 'Okay' when you're ready to begin."
 }
 
-console.log(rule())
+window.alert(rule())
 
 // Ask if user is ready to start the game
-window.alert("Are you ready to play?")
+// window.alert("Are you ready to play?")
 
 // round:
 
@@ -68,7 +68,7 @@ function movePrompt(){
 
 function moveCheck(move){
     if(move != "ROCK" && move != "PAPER" && move != "SCISSORS") {
-        console.log("Sorry, invalid move!")
+        window.alert("Sorry, invalid move!")
         return moveCheck(movePrompt().toUpperCase())
         
     }
@@ -87,7 +87,7 @@ function moveDisplay() {
     return "Your Move: " + userMove + " VS. " + "Computer's Move: " + computerMove 
 }
 
-console.log(moveDisplay())
+window.alert(moveDisplay())
 
 function roundResolve(){
     // Compare the user's input with computerMove
@@ -115,7 +115,7 @@ return roundResolve();
 // If computer wins increase computer score by one
 
 function scoreKeeper(result){
-    console.log(result)
+    window.alert(result)
     if (result == "A Tie!"){
         return scoreBoard()
     }
@@ -133,7 +133,7 @@ function scoreKeeper(result){
 
 // display both scores
 function scoreBoard(){
-    console.log(("User Score: " + userScore + "   Computer Score: " + computerScore))
+    window.alert(("User Score: " + userScore + "   Computer Score: " + computerScore))
     if (userScore > computerScore){
         return "You're pulling ahead!"
     }
@@ -148,18 +148,18 @@ function scoreBoard(){
 
 
 function victory(){
-    console.log ("Congratulations! You put that dirty computer in its place! To play again, refresh this page.")
+    window.alert ("Congratulations! You put that dirty computer in its place! To play again, refresh this page.")
 }
 
 function defeat(){
-    console.log ("Curses! The machine has defeated you! If you would like to try again, refresh this page.")
+    window.alert ("Curses! The machine has defeated you! If you would like to try again, refresh this page.")
 }
 
 // Check scores. If user score == 5 end game and declare user the winnder. If computer score == 5 end game and declare computer the winner. 
 
 function recursiveGame(){
     scoreKeeper(round())
-    console.log(scoreBoard())
+    window.alert(scoreBoard())
     if (userScore >= 3){
         return victory()
     }
@@ -176,7 +176,7 @@ return recursiveGame();
 }
 
 
-console.log(game())
+window.alert(game())
 
 
 
